@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-# -*- coding: utf-8 -*-
 import hashlib
 import random
 
@@ -33,14 +31,15 @@ def gensha256(chaine):
 
 # --- calcul d'instabilité --- #
 
+
 def instab(nb_mesure):
-	instabilite="False"
-	n=0
+	instabilite=0
 	result_n=0
 	result_p=0
 	autoinc=0
 	LaCC=""
-
+	n=0
+	
 	while autoinc != nb_mesure:
 		rnd=random.uniform(-1,1)
 		mesure=gauche_de(str(rnd),1)
@@ -51,16 +50,19 @@ def instab(nb_mesure):
 		autoinc=autoinc+1
 	
 	if result_n < result_p:
-		instabilite="True"
+		instabilite=1
 		LaCC="Blanc"
+		n=n+1
 	if result_n > result_p:
-		instabilite="False"
+		instabilite=2
 		LaCC="Noir"
+		n=n+1
 	if result_n==result_p:
-		instabilite="Egale"
+		instabilite=3
 		LaCC="Bleu"
-
-	print(str(autoinc)+" --> "+str(result_n)+" -- "+str(result_p)+ " Couleur : " + LaCC)
+		n=n+1
+	
+	print(" NB_MESURE : "+str(autoinc)+" --> "+str(result_n)+" -- "+str(result_p)+ " Couleur : " + LaCC)
 
 	return instabilite
 

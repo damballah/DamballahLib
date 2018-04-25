@@ -12,17 +12,17 @@ Largeur = 485
 Hauteur = 485
 Canevas = Canvas(Mafenetre, width = Largeur, height =Hauteur, bg ='white')
 LaVal_instab=1000
-LaCouleur="True"
+
 
 def active():
-	if instab(LaVal_instab)=="True":
+	Vval=instab(LaVal_instab)
+	if Vval==1:
 		LaCouleur="White"
-	elif instab(LaVal_instab)=="False":
+	if Vval==2:
 		LaCouleur="Black"
-	elif instab(LaVal_instab)=="Egale":
+	if Vval==3:
 		LaCouleur="Blue"
-	else:
-		LaCouleur=""
+		
 	return LaCouleur
 
 def L16():
@@ -468,24 +468,61 @@ def L01():
 	Canevas.create_rectangle(225, 421, 254, 396, outline='black',fill=CC)
 
 # Premier affichage des cubes
-
+print("")
+print("DEBUT DES MESURES")
+print("-----------------")
+print("")
+print("1er palier : ")
 L01()
+print("")
+print("2ème palier : ")
 L02()
+print("")
+print("3ème palier : ")
 L03()
+print("")
+print("4ème palier : ")
 L04()
+print("")
+print("5ème palier : ")
 L05()
+print("")
+print("6ème palier : ")
 L06()
+print("")
+print("7ème palier : ")
 L07()
+print("")
+print("8ème palier : ")
 L08()
+print("")
+print("9ème palier : ")
 L09()
+print("")
+print("10 ème palier : ")
 L10()
+print("")
+print("11ème palier : ")
 L11()
+print("")
+print("12ème palier : ")
 L12()
+print("")
+print("13ème palier : ")
 L13()
+print("")
+print("14ème palier : ")
 L14()
+print("")
+print("15ème palier : ")
 L15()
+print("")
+print("16ème palier : ")
 L16()
-
+print("")
+print("---------------")
+print("FIN DES MESURES")
+print("")
 # Canevas.pack(padx =5, pady =5)
 Canevas.pack(padx =5, pady =5)
 
