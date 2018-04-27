@@ -1,8 +1,11 @@
 import hashlib
 import random
-
+import os
 # --- traitement de chaines --- #
 
+def ClearScreen():
+	os.system("cls")
+	
 def droite_de (chaine,nbcar) :
 	droite_de = chaine[-nbcar:]
 	return droite_de
@@ -66,8 +69,40 @@ def instab(nb_mesure):
 
 	return instabilite
 
+# Jeu du pendu
+# ------------
+def ChoixduMotAleat(fichier):
+	nbligne=0
+	i=0
+	LeMot=""
+	
+	f = open(fichier,'r')
+	for line in f:
+		nbligne=nbligne+1
+	f.close	
+	
+	x=random.randint(0,nbligne-1)
+	
+	f = open(fichier,'r')
+	while i <= x:
+		LeMot=f.readline()
+		i=i+1
+	f.close()
+	
+	return LeMot
 
+def AffichageDuMotTroue(LeMot):
+	NouvelAffichage=gauche_de(LeMot,1)
+	longueur=len(LeMot)
+	longueur=longueur-3
+	
+	nb_tiret=" _ " * longueur
 
+	NouvelAffichage=NouvelAffichage+nb_tiret+droite_de(LeMot,2)
+	
+	return NouvelAffichage
+
+	
 
 
 
