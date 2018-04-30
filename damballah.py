@@ -1,6 +1,28 @@
 import hashlib
 import random
 import os
+import sys, termios, tty, time
+
+#  --- Keypressed --- #
+
+# Utilisation
+# while True:
+#    char = Keypressed()
+#    if (char == "p"):
+#    print(char)
+#    exit(0)
+
+def Keypressed():
+    fd = sys.stdin.fileno()
+    old_settings = termios.tcgetattr(fd)
+    try:
+        tty.setraw(sys.stdin.fileno())
+        ch = sys.stdin.read(1)
+ 
+    finally:
+        termios.tcsetattr(fd, termios.TCSADRAIN, old_settings)
+    return ch
+
 # --- traitement de chaines --- #
 
 def Cls():
@@ -127,17 +149,46 @@ def CentrerMot(Mot,NbCarDansLigne):
 	return NouveauMotCentre
 
 def AfficheGagnePerdu(resultat):
-	if resultat==true:
-		L1="##################################################"
+	if resultat==True:
+		# L1="##################################################"
 		L2="#                                                #"
-		L3="#  ▓▓▓▓▓▓  ▓▓▓▓▓▓  ▓▓▓▓▓▓  ▓▓     ▓▓  ▓▓  ▓▓▓▓▓  #"
-		L4="#  ▓       ▓    ▓  ▓       ▓▓ ▓   ▓▓  ▓▓  ▓      #"
-		L5="#  ▓  ▓▓▓  ▓▓▓▓▓▓  ▓  ▓▓▓  ▓▓  ▓  ▓▓  ▓▓  ▓▓▓▓   #"
-		L6="#  ▓    ▓  ▓    ▓  ▓    ▓  ▓▓   ▓ ▓▓  ▓▓  ▓      #"
-		L7="#  ▓▓▓▓▓▓  ▓    ▓  ▓▓▓▓▓▓  ▓▓    ▓▓▓  ▓▓  ▓▓▓▓▓  #"
+		L3="#    ▓▓▓▓▓▓  ▓▓▓▓▓▓  ▓▓▓▓▓▓  ▓▓▓    ▓▓  ▓▓▓▓▓    #"
+		L4="#    ▓       ▓    ▓  ▓       ▓▓ ▓   ▓▓  ▓        #"
+		L5="#    ▓  ▓▓▓  ▓▓▓▓▓▓  ▓  ▓▓▓  ▓▓  ▓  ▓▓  ▓▓▓▓     #"
+		L6="#    ▓    ▓  ▓    ▓  ▓    ▓  ▓▓   ▓ ▓▓  ▓        #"
+		L7="#    ▓▓▓▓▓▓  ▓    ▓  ▓▓▓▓▓▓  ▓▓    ▓▓▓  ▓▓▓▓▓    #"
 		L8="#                                                #"
 		L9="##################################################"
-		print(L1)
+		# print(L1)
+		print(L2)
+		print(L3)
+		print(L4)
+		print(L5)
+		print(L6)
+		print(L7)
+		print(L8)
+		print(L9)
+
+	elif resultat==False:
+		# L1="##################################################"
+		L2="#                                                #"
+		L3="#    ▓▓▓▓▓▓  ▓▓▓▓▓▓  ▓▓▓▓▓▓  ▓▓▓▓▓▓   ▓     ▓    #"
+		L4="#    ▓    ▓  ▓       ▓    ▓   ▓   ▓▓  ▓     ▓    #"
+		L5="#    ▓▓▓▓▓▓  ▓▓▓▓▓   ▓ ▓▓▓▓   ▓    ▓  ▓     ▓    #"
+		L6="#    ▓       ▓       ▓   ▓    ▓   ▓▓  ▓▓   ▓▓    #"
+		L7="#    ▓       ▓▓▓▓▓▓  ▓    ▓  ▓▓▓▓▓▓    ▓▓▓▓▓     #"
+		L8="#                                                #"
+		L9="##################################################"
+		# print(L1)
+		print(L2)
+		print(L3)
+		print(L4)
+		print(L5)
+		print(L6)
+		print(L7)
+		print(L8)
+		print(L9)
+
 		
 		
 def Potence(Level):

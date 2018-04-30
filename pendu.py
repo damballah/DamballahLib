@@ -5,7 +5,7 @@ Cls()
 print("")
 
 AffichageDuTitreDuJeu()
-Potence(11)
+Potence(0)
 
 MotATrouver=ChoixduMotAleat("pendu.mot").upper()
 # print(MotATrouver)
@@ -18,6 +18,9 @@ Longueur=len("###################################################")
 LeMotCentre=CentrerMot(AfficheMot,Longueur+1)
 MotATrouver=CentrerMot(MotATrouver,Longueur)
 
+#gagne=True
+#AfficheGagnePerdu(gagne)
+
 print("")
 print(CentrerMot("Mot à trouver",Longueur))
 print(CentrerMot("-------------",Longueur))
@@ -26,3 +29,8 @@ print(LeMotCentre)
 print("")
 print("")
 
+while True:
+    char = Keypressed()
+     #if (char == "p"):
+    print(char)
+    exit(0)
