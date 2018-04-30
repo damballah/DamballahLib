@@ -1,11 +1,11 @@
 from damballah import *
 
-ClearScreen()
+Cls()
 
 print("")
 
 AffichageDuTitreDuJeu()
-AfficheCadreDuPenduVide()
+Potence(11)
 
 MotATrouver=ChoixduMotAleat("pendu.mot").upper()
 # print(MotATrouver)
