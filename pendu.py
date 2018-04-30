@@ -1,11 +1,20 @@
 from damballah import *
+import time
 
 Cls()
 
 print("")
 
 AffichageDuTitreDuJeu()
-Potence(0)
+
+i=0
+k=""
+while i<=11:
+	Cls()
+	AffichageDuTitreDuJeu()
+	Potence(i)
+	i=i+1
+	time.sleep(.200)
 
 MotATrouver=ChoixduMotAleat("pendu.mot").upper()
 # print(MotATrouver)
@@ -18,8 +27,8 @@ Longueur=len("###################################################")
 LeMotCentre=CentrerMot(AfficheMot,Longueur+1)
 MotATrouver=CentrerMot(MotATrouver,Longueur)
 
-#gagne=True
-#AfficheGagnePerdu(gagne)
+gagne=True
+AfficheGagnePerdu(gagne)
 
 print("")
 print(CentrerMot("Mot à trouver",Longueur))
@@ -29,8 +38,6 @@ print(LeMotCentre)
 print("")
 print("")
 
-while True:
-    char = Keypressed()
-     #if (char == "p"):
-    print(char)
-    exit(0)
+
+	
+	

@@ -1,27 +1,6 @@
 import hashlib
 import random
 import os
-import sys, termios, tty, time
-
-#  --- Keypressed --- #
-
-# Utilisation
-# while True:
-#    char = Keypressed()
-#    if (char == "p"):
-#    print(char)
-#    exit(0)
-
-def Keypressed():
-    fd = sys.stdin.fileno()
-    old_settings = termios.tcgetattr(fd)
-    try:
-        tty.setraw(sys.stdin.fileno())
-        ch = sys.stdin.read(1)
- 
-    finally:
-        termios.tcsetattr(fd, termios.TCSADRAIN, old_settings)
-    return ch
 
 # --- traitement de chaines --- #
 
@@ -321,7 +300,7 @@ def Potence(Level):
 		L3="#                     POTENCE                    #"
 		L4="#                     *******                    #"
 		L5="#                                                #"
-		L6="#               ////////////////                 #"
+		L6="#               ///////////////////              #"
 		L7="#               //                               #"
 		L8="#               //                               #"
 		L9="#               //                               #"
