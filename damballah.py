@@ -4,7 +4,7 @@ import os
 # --- traitement de chaines --- #
 
 def ClearScreen():
-	os.system("cls")
+	os.system("clear")
 	
 def droite_de (chaine,nbcar) :
 	droite_de = chaine[-nbcar:]
@@ -69,8 +69,8 @@ def instab(nb_mesure):
 
 	return instabilite
 
-# Jeu du pendu
-# ------------
+# Jeu du pendu ##############################
+# ------------------------------------------#
 def ChoixduMotAleat(fichier):
 	nbligne=0
 	i=0
@@ -102,7 +102,71 @@ def AffichageDuMotTroue(LeMot):
 	
 	return NouvelAffichage
 
-	
+def AffichageDuTitreDuJeu():
+	L1="##################################################"
+	L2="#                                                #"
+	L3="#            Bienvenue au jeu du pendu           #"
+	L4="#                  'Mode normal'                 #"
+	L5="#                                   By Damballah #"
+	L6="##################################################"
+	print(L1)
+	print(L2)
+	print(L3)
+	print(L4)
+	print(L5)
+	print(L6)
+
+def CentrerMot(Mot,NbCarDansLigne):
+	NbCarDansMot=len(Mot)
+	NbEspace=int(NbCarDansLigne / 2 - (NbCarDansMot/2))
+	Space=" " * NbEspace
+	NouveauMotCentre=Space + Mot + Space
+	return NouveauMotCentre
+
+
+def AfficheCadreDuPenduVide():
+	#L1="##################################################"
+	L2="#                                                #"
+	L3="#                     POTENCE                    #"
+	L4="#                     *******                    #"
+	L5="#                                                #"
+	L6="#                                                #"
+	L7="#                                                #"
+	L8="#                                                #"
+	L9="#                                                #"
+	L10="#                                                #"
+	L11="#                                                #"
+	L12="#                                                #"
+	L13="#                                                #"
+	L14="#                                                #"
+	L15="#                                                #"
+	L16="#                                                #"
+	L17="#                                                #"
+	L18="#                                                #"
+	L19="#                                                #"
+	L20="##################################################"
+
+	#print(L1)
+	print(L2)
+	print(L3)
+	print(L4)
+	print(L5)
+	print(L6)
+	print(L7)
+	print(L8)
+	print(L9)
+	print(L10)
+	print(L11)
+	print(L12)
+	print(L13)
+	print(L14)
+	print(L15)
+	print(L16)
+	print(L17)
+	print(L18)
+	print(L19)
+	print(L20)
+
 
 
 
