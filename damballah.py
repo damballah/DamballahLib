@@ -663,3 +663,61 @@ def Potence(Level):
 		print(L18)
 		print(L19)
 		print(L20)
+
+def DebutDeLaPartie():
+	Cls()
+	print("")
+	AffichageDuTitreDuJeu()
+	i=0
+	k=""
+	Potence(0)
+	MotATrouver=ChoixduMotAleat("pendu.mot").upper()
+	AfficheMot=AffichageDuMotTroue(MotATrouver).upper()
+	Longueur=len("###################################################")
+	LeMotCentre=CentrerMot(AfficheMot,Longueur+1)
+	MotATrouver=CentrerMot(MotATrouver,Longueur)
+	#gagne=True
+	#AfficheGagnePerdu(gagne)
+	print("")
+	print(CentrerMot("Mot à trouver",Longueur))
+	print(CentrerMot("-------------",Longueur))
+	print("")
+	print(LeMotCentre)
+	print("")
+	print("")
+	return MotATrouver
+
+def TestSiLettre(lettre,mot):
+	TestReussi=False
+	LongueurMot=len(mot)
+	LaPos=[]
+	n=0
+	while n <= LongueurMot:
+		if milieu_de(mot,n,1)==lettre:
+			LaPos.append(n)
+			TestReussi=True
+		n=n+1
+	return TestReussi
+
+def RecupPosLettreTrouve(lettre,mot):
+	TestReussi=False
+	LongueurMot=len(mot)
+	LaPos=[]
+	n=0
+	while n <= LongueurMot:
+		if milieu_de(mot,n,1)==lettre:
+			LaPos.append(n)
+			TestReussi=True
+		n=n+1
+	return LaPos
+
+def ReformatteMotSiLettreTrouve(lettre,mot,LesPos):
+	NombreDePos=Len(LesPos)
+	LeNouveauMot=gauche_de(mot,1)
+	
+	
+	
+	
+	
+	
+	
